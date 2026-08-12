@@ -47,12 +47,8 @@
     .about-section { padding: 50px 0 80px; }
     .about-inner { max-width: 1240px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
     .about-img-wrap { position: relative; }
-    .about-img-main { width: 100%; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 20px 50px rgba(5,29,59,0.15); }
-    .about-img-main img { width: 100%; height: 100%; object-fit: cover; }
-    /* TODO placeholder if no image */
-    .img-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #0A2540, #113357); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #CBD5E0; gap: 12px; }
-    .img-placeholder i { font-size: 48px; color: var(--cyan-accent); }
-    .img-placeholder p { font-size: 13px; font-weight: 600; color: #718096; }
+    .about-img-main { width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(5,29,59,0.15); }
+    .about-img-main img { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 16px; }
     .about-badge { position: absolute; bottom: -20px; right: -20px; background: var(--cyan-accent); color: #fff; border-radius: 14px; padding: 18px 22px; text-align: center; box-shadow: 0 10px 30px rgba(0,168,181,0.35); }
     .about-badge strong { display: block; font-size: 36px; font-weight: 800; line-height: 1; }
     .about-badge span { font-size: 13px; font-weight: 600; opacity: 0.9; }
@@ -64,6 +60,15 @@
     .highlight-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(0,168,181,0.1); color: var(--cyan-accent); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
     .highlight-text strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy-dark); }
     .highlight-text span { font-size: 13px; color: var(--text-muted); }
+
+    /* Directors Hero Banner */
+    .directors-hero-banner { width: 100%; line-height: 0; overflow: hidden; }
+    .directors-hero-banner img { width: 100%; height: auto; display: block; }
+
+    /* Directors Feature Banner */
+    .directors-banner-section { padding: 0; background: #f0f4f8; }
+    .directors-banner-wrap { max-width: 100%; overflow: hidden; line-height: 0; }
+    .directors-banner-img { width: 100%; height: auto; display: block; object-fit: cover; }
 
     /* Stats Banner */
     .stats-banner { background: var(--navy-dark); padding: 50px 0; }
@@ -131,8 +136,8 @@
           <a href="https://www.instagram.com/print_zone_5/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://wa.me/919284197277" target="_blank" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
-        <a href="tel:+919284197277" class="top-quote-btn">
-          <i class="fa-solid fa-phone"></i> +91 92841 97277
+        <a href="tel:+918551876714" class="top-quote-btn">
+          <i class="fa-solid fa-phone"></i> +91 85518 76714
         </a>
       </div>
     </div>
@@ -163,32 +168,10 @@
     </div>
   </nav>
 
-  <!-- Floating Sidebar -->
-  <div class="floating-sidebar">
-    <a href="https://wa.me/919284197277?text=Hi%20Print%20Zone%2C%20I%20want%20a%20quote" target="_blank" class="floating-item floating-wa">
-      <i class="fa-brands fa-whatsapp"></i> WhatsApp
-    </a>
-    <a href="tel:+919284197277" class="floating-item floating-call">
-      <i class="fa-solid fa-phone"></i> Call Now
-    </a>
-    <a href="index.html#contact" class="floating-item floating-quote">
-      <i class="fa-solid fa-envelope"></i> Get Quote
-    </a>
+  <!-- Directors Banner — full width below hero -->
+  <div class="directors-hero-banner">
+    <img src="img/director.jpeg" alt="Rohit Sonawane & Shrihari Sonar — Directors, Print Zone Jalgaon">
   </div>
-
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="page-hero-bg"></div>
-    <div class="page-hero-inner">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span style="color:#fff">About Us</span>
-      </div>
-      <h1>About <span style="color:var(--cyan-bright)">Print Zone</span></h1>
-      <p>Jalgaon's trusted printing, branding, and fabrication company — crafting impactful visual identities since our founding.</p>
-    </div>
-  </section>
 
   <!-- Our Story Section -->
   <section class="about-section">
@@ -197,16 +180,7 @@
       <!-- Left: Image Area -->
       <div class="about-img-wrap">
         <div class="about-img-main">
-          <!-- ================================================
-               ABOUT IMAGE — Company / Workshop / Team Photo
-               TODO: Replace with actual photo
-               Suggested: img/about_company.jpg
-               Usage: <img src="img/about_company.jpg" alt="Print Zone Jalgaon">
-               ================================================ -->
-          <div class="img-placeholder">
-            <i class="fa-solid fa-image"></i>
-            <p>TODO: Add company photo here<br><code>img/about_company.jpg</code></p>
-          </div>
+          <img src="img/about_directors_banner.jpg" alt="Rohit Sonawane &amp; Shrihari Sonar - Directors, Print Zone Jalgaon">
         </div>
         <div class="about-badge">
           <strong>10+</strong>
@@ -266,11 +240,11 @@
   <section class="stats-banner">
     <div class="stats-inner">
       <div class="stat-item">
-        <strong>500+</strong>
+        <strong>350+</strong>
         <p>Happy Clients</p>
       </div>
       <div class="stat-item">
-        <strong>10K+</strong>
+        <strong>5K+</strong>
         <p>Projects Completed</p>
       </div>
       <div class="stat-item">
@@ -310,79 +284,6 @@
         <h4>Creative Solutions</h4>
         <p>Our in-house designers bring fresh ideas to every brand requirement, from small shops to major campaigns.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Team Section -->
-  <section class="team-section">
-    <div class="section-header">
-      <h2 class="section-title">Our Team</h2>
-    </div>
-    <div class="team-grid">
-
-      <!-- ================================================
-           TEAM MEMBER 1 — Founder / Owner
-           TODO: Add real name, role, and photo
-           Usage: Replace <i> tag with <img src="img/team_1.jpg">
-           ================================================ -->
-      <div class="team-card">
-        <div class="team-photo">
-          <!-- TODO: Replace with actual photo: <img src="img/team_owner.jpg" alt="Owner" style="width:100%;height:100%;object-fit:cover;"> -->
-          <i class="fa-solid fa-user-tie"></i>
-        </div>
-        <div class="team-info">
-          <h4><!-- TODO: Add Founder Name --></h4>
-          <p class="role">Founder &amp; Director</p>
-          <p>Leading Print Zone with a vision to make world-class printing accessible to every business in Maharashtra.</p>
-        </div>
-      </div>
-
-      <!-- ================================================
-           TEAM MEMBER 2 — Design Lead
-           TODO: Add real name and photo
-           ================================================ -->
-      <div class="team-card">
-        <div class="team-photo">
-          <!-- TODO: Replace with actual photo: <img src="img/team_designer.jpg" alt="Design Lead" style="width:100%;height:100%;object-fit:cover;"> -->
-          <i class="fa-solid fa-pen-ruler"></i>
-        </div>
-        <div class="team-info">
-          <h4><!-- TODO: Add Designer Name --></h4>
-          <p class="role">Head of Design</p>
-          <p>Creating pixel-perfect artwork for corporates, politicians, and event managers across Maharashtra.</p>
-        </div>
-      </div>
-
-      <!-- ================================================
-           TEAM MEMBER 3 — Operations
-           TODO: Add real name and photo
-           ================================================ -->
-      <div class="team-card">
-        <div class="team-photo">
-          <!-- TODO: Replace with actual photo: <img src="img/team_ops.jpg" alt="Operations" style="width:100%;height:100%;object-fit:cover;"> -->
-          <i class="fa-solid fa-gears"></i>
-        </div>
-        <div class="team-info">
-          <h4><!-- TODO: Add Operations Name --></h4>
-          <p class="role">Operations Manager</p>
-          <p>Ensuring every job is produced, dispatched, and installed flawlessly within the committed timeline.</p>
-        </div>
-      </div>
-
-      <!-- ================================================
-           TEAM MEMBER 4 — Web Developer (NEW)
-           ================================================ -->
-      <div class="team-card">
-        <div class="team-photo">
-          <i class="fa-solid fa-laptop-code"></i>
-        </div>
-        <div class="team-info">
-          <h4><!-- TODO: Add Web Developer Name --></h4>
-          <p class="role">Web Developer</p>
-          <p>Building high-performance, mobile-responsive business websites to establish our clients' online presence.</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -509,7 +410,7 @@
         <h4 class="footer-title">Contact Info</h4>
         <ul class="footer-links">
           <li><i class="fa-solid fa-phone"></i> <a href="tel:+919284197277">+91 92841 97277</a></li>
-          <li><i class="fa-solid fa-phone"></i> <a href="tel:+918551876714">+91 85518 76714</a></li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+918551976714">+91 85519 76714</a></li>
           <li><i class="fa-solid fa-envelope"></i> <a href="mailto:printzone0501@gmail.com">printzone0501@gmail.com</a></li>
           <li><i class="fa-solid fa-location-dot"></i> Shop No. 141, Old B J Market, Jalgaon 425001</li>
         </ul>
