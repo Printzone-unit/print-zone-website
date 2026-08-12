@@ -1762,10 +1762,10 @@ textarea.form-control {
   justify-content: center !important;
   background: #FFFFFF;
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 6px 10px;
-  width: 100px !important;
-  height: 44px !important;
+  border-radius: 8px;
+  padding: 8px 12px;
+  width: 180px !important;
+  height: 80px !important;
   box-shadow: var(--shadow-sm);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   flex-shrink: 0 !important;
@@ -2511,6 +2511,7 @@ img {
 
 /* --- TABLET PORTRAIT: 900px --- */
 @media (max-width: 900px) {
+  .client-logo-item { width: 130px !important; height: 58px !important; padding: 6px 10px !important; }
   .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 30px; padding: 40px 20px; }
   .hero-headline { font-size: clamp(24px, 5vw, 40px); }
   .hero-visual { order: -1; }
@@ -2583,8 +2584,7 @@ img {
   .section-title    { font-size: clamp(20px, 5vw, 30px); }
   .section-subtitle { font-size: 14px; }
 
-  .clients-track-mid .client-logo-item { width: 90px !important; height: 38px !important; }
-  .clients-track-horizontal .client-logo-item { width: 80px !important; height: 34px !important; }
+  .client-logo-item { width: 100px !important; height: 46px !important; padding: 4px 8px !important; }
 
   .faq-question { font-size: 15px; }
 }
