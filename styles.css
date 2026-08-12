@@ -1794,18 +1794,7 @@ textarea.form-control {
   filter: grayscale(0%) opacity(1);
 }
 
-/* Make middle row brand logos larger */
-.clients-carousel:nth-of-type(2) .client-logo-item {
-  width: 140px !important;
-  height: 60px !important;
-  padding: 8px 12px;
-}
-.clients-carousel:nth-of-type(2) .client-logo-item img {
-  width: auto !important;
-  height: auto !important;
-  max-width: 85% !important;
-  max-height: 80% !important;
-}
+
 
 @keyframes scrollClients {
   0% { transform: translateX(0); }
