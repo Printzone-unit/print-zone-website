@@ -1,6 +1,7 @@
 /* Print Zone Interactive Application Engine */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initDynamicNavbarHeight();
   initPortfolioFilter();
   initLanguageToggle();
   initModalEngine();
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounterAnimation();
   initActiveNavHighlight();
   initFaqAccordion();
+  initServicesPageEngine();
 });
 
 /* 1. Portfolio Filter Engine */
@@ -497,4 +499,66 @@ function initFaqAccordion() {
       if (!isOpen) item.classList.add('open');
     });
   });
+}
+
+/* F7. Dynamic Navbar Height for Sticky Position Calculations */
+function initDynamicNavbarHeight() {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+  
+  function updateHeight() {
+    const height = navbar.offsetHeight;
+    document.documentElement.style.setProperty('--navbar-height', `${height}px`);
+  }
+  
+  window.addEventListener('resize', updateHeight);
+  window.addEventListener('scroll', updateHeight);
+  updateHeight(); // initial run
+  
+  // Run again after dynamic elements/fonts load
+  setTimeout(updateHeight, 300);
+}
+
+/* F8. Services Page Slideshow & Scroll Spy Navigation */
+function initServicesPageEngine() {
+  // 1. Slideshow transition
+  const slides = document.querySelectorAll('.svc-slide');
+  if (slides.length > 0) {
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 4000); // cycle slide every 4 seconds
+  }
+
+  // 2. Scroll Spy for quicknav buttons
+  const sections = document.querySelectorAll('.service-detail');
+  const qnavBtns = document.querySelectorAll('.qnav-btn');
+  if (sections.length > 0 && qnavBtns.length > 0) {
+    function highlightQuickNav() {
+      let activeSectionId = null;
+      // Scroll position offset for sticky navbar + quicknav height
+      const scrollPos = window.scrollY + 180; 
+
+      sections.forEach(sec => {
+        const top = sec.offsetTop;
+        const height = sec.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          activeSectionId = sec.getAttribute('id');
+        }
+      });
+
+      qnavBtns.forEach(btn => {
+        btn.classList.remove('active');
+        if (activeSectionId && btn.getAttribute('href') === '#' + activeSectionId) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightQuickNav);
+    window.addEventListener('resize', highlightQuickNav);
+    highlightQuickNav(); // run initially
+  }
 }
