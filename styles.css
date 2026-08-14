@@ -2611,3 +2611,105 @@ img {
   .infra-img-box  { height: 220px; }
   .infra-card h4  { font-size: 24px; }
 }
+
+/* ====================================================
+   MOBILE RESPONSIVENESS PATCH FOR HEADER & UTILITY BAR
+   ==================================================== */
+
+/* Desktop view: Hide mobile-only quote menu item */
+.mobile-nav-quote {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  /* Hide the desktop "Get A Quote" button in navbar on mobile/tablet widths */
+  .navbar .btn-navy {
+    display: none !important;
+  }
+  
+  /* Display the mobile-only Get A Quote item in the hamburger dropdown menu */
+  .mobile-nav-quote {
+    display: block !important;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  .mobile-nav-quote .btn {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 12px;
+  }
+
+  /* Center/clean logo and menu button layout */
+  .mobile-menu-btn {
+    display: block;
+    padding: 8px;
+    z-index: 1001;
+    position: relative;
+    margin-left: auto; /* ensure it stays on the right */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide top announcement slogan & social links on mobile to save space */
+  .top-bar .top-slogan {
+    display: none !important;
+  }
+  .top-bar .social-links {
+    display: none !important;
+  }
+  
+  /* Expand top bar inner elements to utilize full width nicely */
+  .top-bar-inner {
+    padding: 0 16px !important;
+  }
+  .top-right {
+    width: 100% !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+  
+  /* Scale language switcher buttons slightly smaller */
+  .lang-switch {
+    font-size: 12px !important;
+    gap: 3px !important;
+  }
+  .lang-btn {
+    font-size: 12px !important;
+    padding: 2px 4px !important;
+  }
+  
+  /* Style phone utility button so it never wraps */
+  .top-quote-btn {
+    font-size: 11.5px !important;
+    padding: 4px 10px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Scale navbar brand logo elements to prevent crowding */
+  .logo-img {
+    height: 38px !important;
+    margin-right: 8px !important;
+  }
+  .logo-title {
+    font-size: 20px !important;
+  }
+  .logo-tagline-sm {
+    font-size: 9px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hide the logo sub-tagline on small phones for absolute clarity */
+  .logo-tagline-sm {
+    display: none !important;
+  }
+  .logo-title {
+    font-size: 18px !important;
+  }
+  .logo-img {
+    height: 34px !important;
+  }
+}
